@@ -146,15 +146,17 @@ TODO?
 
 \subsection{Geben Sie zu den linearisierten und normierten DGLn die Übertragungsfunktionen an}
 
-\begin{equation}
-  G_1(s) = - \frac{5.9060}{s^2 - 1308.0120}
-\end{equation}
+\begin{eqnarray*}
+  s^2 X(s) - 1308.012 s^0 X(s) = -5.9060 s^0 I(s) \\
+  X(s)(s^2 - 1308.012) = -5.9060 I(s) \\
+  G_1(s) = \frac{X(s)}{I(s)} = \frac{-5.9060}{s^2 - 1308.012}
+\end{eqnarray*}
 
-\begin{equation}
-  G_2(s) = \frac{10}{s+30}
-\end{equation}
-
-TODO!
+\begin{eqnarray*}
+  s^1 I(s) + 30 s^0 I(s) = 10 s^0 U(S) \\
+  I(s)(s + 30) = 10 U(s) \\
+  G_2(s) = \frac{I(s)}{U(s)} = \frac{10}{s + 30} 
+\end{eqnarray*}
 
 \subsection{Geben Sie die Gesamtübertragungsfunktion der Regelstrecke an}
 
