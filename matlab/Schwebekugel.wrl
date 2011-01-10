@@ -1,0 +1,81 @@
+#VRML V2.0 utf8
+
+#Created with V-Realm Builder v2.0
+#Integrated Data Systems Inc.
+#www.ids-net.com
+
+
+Transform {
+	translation	-0.06 -0.017 0
+	rotation	0 0 1  1.5708
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0.9 0.107744 0.0726535
+			}
+
+		}
+
+		geometry	Cylinder {
+			height	0.05
+			radius	0.0005
+		}
+
+	}
+}
+PointLight {
+	ambientIntensity	0.8
+	intensity	1
+	location	0 0 0
+	radius	100.2
+}
+DEF v1 Viewpoint {
+	orientation	0 -1 0  0.0836006
+	position	-0.0388172 -0.0216 0.428668
+}
+Background {
+	groundAngle	[ 0.9, 1.5, 1.57 ]
+	groundColor	[ 0 0.8 0,
+			  0.174249 0.82 0.187362,
+			  0.467223 0.82 0.445801,
+			  0.621997 0.67 0.600279 ]
+	skyAngle	[ 0.1, 1.2, 1.57 ]
+	skyColor	[ 0.76238 0.8 0.1427,
+			  0.277798 0.219779 0.7,
+			  0.222549 0.390234 0.7,
+			  0.60094 0.662637 0.69 ]
+}
+DEF Kugel Transform {
+	translation	0 0 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0.388129 0.427988 0.82
+				specularColor	0.86 0.86 0.86
+			}
+
+		}
+
+		geometry	Sphere {
+			radius	0.02
+		}
+
+	}
+}
+DEF Spule Transform {
+	translation	0 0.07 0
+	children Shape {
+		appearance	Appearance {
+			material	Material {
+				diffuseColor	0.694907 0.601806 0.82
+			}
+
+		}
+
+		geometry	Cylinder {
+			height	0.1
+			radius	0.03
+		}
+
+	}
+}
