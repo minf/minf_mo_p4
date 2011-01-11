@@ -1,12 +1,12 @@
 Model {
   Name			  "prak4"
-  Version		  7.4
+  Version		  7.3
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.44"
+    ComputedModelVersion    "1.53"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -18,16 +18,15 @@ Model {
   DataTypeOverride	  "UseLocalSettings"
   MinMaxOverflowLogging	  "UseLocalSettings"
   MinMaxOverflowArchiveMode "Overwrite"
-  MaxMDLFileLineLength	  120
   Created		  "Mon Jan 10 10:16:01 2011"
   Creator		  "Administrator"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Administrator"
+  LastModifiedBy	  "krohn_d"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Jan 10 11:59:17 2011"
-  RTWModifiedTimeStamp	  216561554
-  ModelVersionFormat	  "1.%<AutoIncrement:44>"
+  LastModifiedDate	  "Tue Jan 11 13:02:44 2011"
+  RTWModifiedTimeStamp	  216651716
+  ModelVersionFormat	  "1.%<AutoIncrement:53>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -65,7 +64,6 @@ Model {
   CovMetricSettings	  "dw"
   CovNameIncrementing	  off
   CovHtmlReporting	  on
-  CovForceBlockReductionOff on
   covSaveCumulativeToWorkspaceVar on
   CovSaveSingleToWorkspaceVar on
   CovCumulativeVarName	  "covCumulativeData"
@@ -110,7 +108,7 @@ Model {
 	  $ObjectID		  2
 	  Version		  "1.6.0"
 	  StartTime		  "0.0"
-	  StopTime		  "50.0"
+	  StopTime		  "100.0"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -137,6 +135,7 @@ Model {
 	  AutoInsertRateTranBlk	  off
 	  SampleTimeConstraint	  "Unconstrained"
 	  InsertRTBMode		  "Whenever possible"
+	  SignalSizeVariationType "Allow only fixed size"
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  3
@@ -157,14 +156,12 @@ Model {
 	  SignalLogging		  on
 	  InspectSignalLogs	  off
 	  SaveTime		  on
-	  ReturnWorkspaceOutputs  off
 	  StateSaveName		  "xout"
 	  TimeSaveName		  "tout"
 	  OutputSaveName	  "yout"
 	  SignalLoggingName	  "logsout"
 	  OutputOption		  "RefineOutputTimes"
 	  OutputTimes		  "[]"
-	  ReturnWorkspaceOutputsName "out"
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
@@ -186,7 +183,6 @@ Model {
 	  BooleanDataType	  on
 	  ConditionallyExecuteInputs on
 	  InlineParams		  off
-	  UseIntDivNetSlope	  off
 	  InlineInvariantSignals  off
 	  OptimizeBlockIOStorage  on
 	  BufferReuse		  on
@@ -194,7 +190,6 @@ Model {
 	  StrengthReduction	  off
 	  EnforceIntegerDowncast  on
 	  ExpressionFolding	  on
-	  BooleansAsBitfields	  off
 	  EnableMemcpy		  on
 	  MemcpyThreshold	  64
 	  PassReuseOutputArgsAs	  "Structure reference"
@@ -260,9 +255,6 @@ Model {
 	  ParameterUnderflowMsg	  "none"
 	  ParameterPrecisionLossMsg "warning"
 	  ParameterTunabilityLossMsg "warning"
-	  FixptConstUnderflowMsg  "none"
-	  FixptConstOverflowMsg	  "none"
-	  FixptConstPrecisionLossMsg "none"
 	  UnderSpecifiedDataTypeMsg "none"
 	  UnnecessaryDatatypeConvMsg "none"
 	  VectorMatrixConversionMsg "none"
@@ -287,7 +279,6 @@ Model {
 	  ModelReferenceSymbolNameMessage "warning"
 	  ModelReferenceExtraNoncontSigs "error"
 	  StateNameClashWarn	  "warning"
-	  SimStateInterfaceChecksumMismatchMsg "warning"
 	  StrictBusMsg		  "Warning"
 	  LoggingUnavailableSignals "error"
 	  BlockIODiagnostic	  "none"
@@ -335,9 +326,6 @@ Model {
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
 	  SimBlas		  on
-	  SimCtrlC		  on
-	  SimExtrinsic		  on
-	  SimIntegrity		  on
 	  SimUseLocalCustomCode	  off
 	  SimBuildMode		  "sf_incremental_build"
 	}
@@ -435,7 +423,6 @@ Model {
 	      CustomSymbolStrType     "$N$R$M"
 	      CustomSymbolStrField    "$N$M"
 	      CustomSymbolStrFcn      "$R$N$M$F"
-	      CustomSymbolStrFcnArg   "rt$I$N$M"
 	      CustomSymbolStrBlkIO    "rtb_$N$M"
 	      CustomSymbolStrTmpVar   "$N$M"
 	      CustomSymbolStrMacro    "$R$N$M"
@@ -491,7 +478,6 @@ Model {
 	      ParMdlRefBuildCompliant on
 	      CompOptLevelCompliant   on
 	      IncludeMdlTerminateFcn  on
-	      GeneratePreprocessorConditionals "Disable all"
 	      CombineOutputUpdateFcns off
 	      SuppressErrorStatus     off
 	      ERTFirstTimeCompliant   off
@@ -506,7 +492,6 @@ Model {
 	      PurelyIntegerCode	      off
 	      SupportContinuousTime   on
 	      SupportNonInlinedSFcns  on
-	      SupportVariableSizeSignals off
 	      EnableShiftOperators    on
 	      ParenthesesLevel	      "Nominal"
 	      PortableWordSizes	      off
@@ -630,7 +615,6 @@ Model {
       BusObject		      "BusObject"
       BusOutputAsStruct	      off
       PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
       SampleTime	      "-1"
       OutMin		      "[]"
       OutMax		      "[]"
@@ -644,6 +628,7 @@ Model {
       LatchByDelayingOutsideSignal off
       LatchByCopyingInsideSignal off
       Interpolate	      on
+      DimensionsMode	      "auto"
     }
     Block {
       BlockType		      Integrator
@@ -667,7 +652,6 @@ Model {
       BusObject		      "BusObject"
       BusOutputAsStruct	      off
       PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
       SampleTime	      "-1"
       OutMin		      "[]"
       OutMax		      "[]"
@@ -681,6 +665,7 @@ Model {
       SourceOfInitialOutputValue "Dialog"
       OutputWhenDisabled      "held"
       InitialOutput	      "[]"
+      DimensionsMode	      "auto"
     }
     Block {
       BlockType		      "S-Function"
@@ -758,7 +743,7 @@ Model {
   }
   System {
     Name		    "prak4"
-    Location		    [115, 266, 1025, 674]
+    Location		    [2, 70, 1278, 976]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -772,13 +757,11 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    63
     Block {
       BlockType		      Sum
       Name		      "Add"
-      SID		      21
       Ports		      [2, 1]
-      Position		      [95, 87, 125, 118]
+      Position		      [360, 222, 390, 253]
       InputSameDT	      off
       OutDataTypeMode	      "Inherit via internal rule"
       OutDataType	      "fixdt(1, 16)"
@@ -789,8 +772,7 @@ Model {
     Block {
       BlockType		      Gain
       Name		      "Gain"
-      SID		      16
-      Position		      [445, 250, 475, 280]
+      Position		      [780, 500, 810, 530]
       Gain		      "-1"
       ParameterDataTypeMode   "Inherit via internal rule"
       ParameterDataType	      "fixdt(1, 16)"
@@ -805,11 +787,10 @@ Model {
     Block {
       BlockType		      DiscretePulseGenerator
       Name		      "Pulse\nGenerator"
-      SID		      60
       Ports		      [0, 1]
-      Position		      [25, 79, 55, 111]
+      Position		      [135, 214, 165, 246]
       PulseType		      "Time based"
-      Amplitude		      "0.001"
+      Amplitude		      "0.005"
       Period		      "10"
       PulseWidth	      "50"
       PhaseDelay	      "5"
@@ -818,9 +799,8 @@ Model {
     Block {
       BlockType		      SubSystem
       Name		      "Regelstrecke"
-      SID		      51
       Ports		      [1, 2]
-      Position		      [445, 78, 530, 147]
+      Position		      [710, 213, 795, 282]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -830,7 +810,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Regelstrecke"
-	Location		[105, 335, 769, 605]
+	Location		[120, 631, 784, 901]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -846,17 +826,14 @@ Model {
 	Block {
 	  BlockType		  Inport
 	  Name			  "delta_u"
-	  SID			  52
 	  Position		  [25, 33, 55, 47]
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Embedded\nMATLAB Function"
-	  SID			  53
 	  Ports			  [2, 1]
 	  Position		  [290, 40, 395, 100]
-	  LibraryVersion	  "1.30"
 	  PermitHierarchicalResolution "ExplicitOnly"
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -894,11 +871,9 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    10
 	    Block {
 	      BlockType		      Inport
 	      Name		      "i"
-	      SID		      1
 	      Position		      [20, 101, 40, 119]
 	      IconDisplay	      "Port number"
 	      OutDataType	      "sfix(16)"
@@ -907,7 +882,6 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "x"
-	      SID		      10
 	      Position		      [20, 136, 40, 154]
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -915,7 +889,6 @@ Model {
 	    Block {
 	      BlockType		      Demux
 	      Name		      " Demux "
-	      SID		      7
 	      Ports		      [1, 1]
 	      Position		      [270, 160, 320, 200]
 	      Outputs		      "1"
@@ -923,7 +896,6 @@ Model {
 	    Block {
 	      BlockType		      "S-Function"
 	      Name		      " SFunction "
-	      SID		      6
 	      Tag		      "Stateflow S-Function prak4 2"
 	      Ports		      [2, 2]
 	      Position		      [180, 100, 230, 160]
@@ -940,13 +912,11 @@ Model {
 	    Block {
 	      BlockType		      Terminator
 	      Name		      " Terminator "
-	      SID		      9
 	      Position		      [460, 171, 480, 189]
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "x_dot_dot"
-	      SID		      5
 	      Position		      [460, 101, 480, 119]
 	      IconDisplay	      "Port number"
 	      OutDataType	      "sfix(16)"
@@ -989,10 +959,8 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Embedded\nMATLAB Function1"
-	  SID			  54
 	  Ports			  [2, 1]
 	  Position		  [80, 29, 150, 76]
-	  LibraryVersion	  "1.30"
 	  PermitHierarchicalResolution "ExplicitOnly"
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -1030,11 +998,9 @@ Model {
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
 	    ZoomFactor		    "100"
-	    SIDHighWatermark	    10
 	    Block {
 	      BlockType		      Inport
 	      Name		      "u"
-	      SID		      1
 	      Position		      [20, 101, 40, 119]
 	      IconDisplay	      "Port number"
 	      OutDataType	      "sfix(16)"
@@ -1043,7 +1009,6 @@ Model {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "i"
-	      SID		      10
 	      Position		      [20, 136, 40, 154]
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -1051,7 +1016,6 @@ Model {
 	    Block {
 	      BlockType		      Demux
 	      Name		      " Demux "
-	      SID		      7
 	      Ports		      [1, 1]
 	      Position		      [270, 160, 320, 200]
 	      Outputs		      "1"
@@ -1059,7 +1023,6 @@ Model {
 	    Block {
 	      BlockType		      "S-Function"
 	      Name		      " SFunction "
-	      SID		      6
 	      Tag		      "Stateflow S-Function prak4 1"
 	      Ports		      [2, 2]
 	      Position		      [180, 100, 230, 160]
@@ -1076,13 +1039,11 @@ Model {
 	    Block {
 	      BlockType		      Terminator
 	      Name		      " Terminator "
-	      SID		      9
 	      Position		      [460, 171, 480, 189]
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "i_dot"
-	      SID		      5
 	      Position		      [460, 101, 480, 119]
 	      IconDisplay	      "Port number"
 	      OutDataType	      "sfix(16)"
@@ -1125,7 +1086,6 @@ Model {
 	Block {
 	  BlockType		  Integrator
 	  Name			  "Integrator"
-	  SID			  55
 	  Ports			  [1, 1]
 	  Position		  [205, 40, 235, 70]
 	  InitialCondition	  "3.3221"
@@ -1133,14 +1093,12 @@ Model {
 	Block {
 	  BlockType		  Integrator
 	  Name			  "Integrator1"
-	  SID			  56
 	  Ports			  [1, 1]
 	  Position		  [420, 55, 450, 85]
 	}
 	Block {
 	  BlockType		  Integrator
 	  Name			  "Integrator2"
-	  SID			  57
 	  Ports			  [1, 1]
 	  Position		  [485, 55, 515, 85]
 	  InitialCondition	  "0.015"
@@ -1148,7 +1106,6 @@ Model {
 	Block {
 	  BlockType		  Outport
 	  Name			  "x_out"
-	  SID			  58
 	  Position		  [565, 95, 595, 110]
 	  BlockRotation		  270
 	  IconDisplay		  "Port number"
@@ -1156,7 +1113,6 @@ Model {
 	Block {
 	  BlockType		  Outport
 	  Name			  "delta_x_out"
-	  SID			  59
 	  Position		  [450, 20, 480, 35]
 	  BlockRotation		  270
 	  Port			  "2"
@@ -1227,42 +1183,25 @@ Model {
     Block {
       BlockType		      TransferFcn
       Name		      "Regler"
-      SID		      2
-      Position		      [220, 64, 405, 166]
+      Position		      [485, 199, 670, 301]
       Numerator		      "[-5362 -7.415e004 -3.342e005]"
       Denominator	      "[1 100 0]"
     }
     Block {
       BlockType		      Scope
-      Name		      "Scope"
-      SID		      15
-      Ports		      [1]
-      Position		      [585, 114, 615, 146]
-      Floating		      off
-      Location		      [188, 390, 512, 629]
-      Open		      off
-      NumInputPorts	      "1"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      DataFormat	      "StructureWithTime"
-      SampleTime	      "0"
-    }
-    Block {
-      BlockType		      Scope
       Name		      "Scope1"
-      SID		      61
       Ports		      [1]
-      Position		      [675, 79, 705, 111]
+      Position		      [1045, 234, 1075, 266]
       Floating		      off
-      Location		      [188, 390, 512, 629]
+      Location		      [225, 327, 986, 929]
       Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
       }
+      YMin		      "0.014"
+      YMax		      "0.019"
       SaveName		      "ScopeData1"
       DataFormat	      "StructureWithTime"
       SampleTime	      "0"
@@ -1270,9 +1209,8 @@ Model {
     Block {
       BlockType		      Scope
       Name		      "Scope2"
-      SID		      62
       Ports		      [1]
-      Position		      [95, 24, 125, 56]
+      Position		      [360, 159, 390, 191]
       Floating		      off
       Location		      [188, 390, 512, 629]
       Open		      off
@@ -1288,9 +1226,8 @@ Model {
     Block {
       BlockType		      Scope
       Name		      "Scope3"
-      SID		      63
       Ports		      [1]
-      Position		      [165, 34, 195, 66]
+      Position		      [430, 169, 460, 201]
       Floating		      off
       Location		      [188, 390, 512, 629]
       Open		      off
@@ -1304,10 +1241,26 @@ Model {
       SampleTime	      "0"
     }
     Block {
+      BlockType		      Scope
+      Name		      "Scope4"
+      Ports		      [1]
+      Position		      [710, 124, 740, 156]
+      Floating		      off
+      Location		      [5, 45, 1285, 995]
+      Open		      off
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      SaveName		      "ScopeData4"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
       BlockType		      Constant
       Name		      "Sollwert"
-      SID		      9
-      Position		      [40, 185, 70, 215]
+      Position		      [305, 320, 335, 350]
       Value		      "0.015"
       OutDataType	      "fixdt(1, 16)"
       OutScaling	      "2^0"
@@ -1315,9 +1268,8 @@ Model {
     Block {
       BlockType		      Sum
       Name		      "Subtract"
-      SID		      20
       Ports		      [2, 1]
-      Position		      [150, 97, 180, 128]
+      Position		      [415, 232, 445, 263]
       Inputs		      "+-"
       InputSameDT	      off
       OutDataTypeMode	      "Inherit via internal rule"
@@ -1327,12 +1279,16 @@ Model {
       SaturateOnIntegerOverflow	off
     }
     Block {
+      BlockType		      TransferFcn
+      Name		      "Transfer Fcn"
+      Position		      [230, 212, 290, 248]
+      Denominator	      "[1 1]"
+    }
+    Block {
       BlockType		      Reference
       Name		      "VR Signal Expander"
-      SID		      17
       Ports		      [1, 1]
-      Position		      [510, 246, 605, 284]
-      LibraryVersion	      "1.240"
+      Position		      [855, 496, 950, 534]
       SourceBlock	      "vrlib/VR Signal Expander"
       SourceType	      "VR Signal Expander"
       ShowPortLabels	      "FromPortIcon"
@@ -1349,14 +1305,12 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "VR Sink"
-      SID		      19
       Ports		      [1]
-      Position		      [655, 229, 750, 301]
+      Position		      [1000, 479, 1095, 551]
       InstantiateOnLoad	      on
-      LibraryVersion	      "1.240"
       SourceBlock	      "vrlib/VR Sink"
       SourceType	      "Virtual Reality Sink"
-      SampleTime	      "0.1"
+      SampleTime	      "0.01"
       ViewEnable	      on
       RemoteChange	      off
       RemoteView	      on
@@ -1365,25 +1319,32 @@ Model {
       AutoView		      off
       VideoDimensions	      "[]"
     }
+    Block {
+      BlockType		      TransferFcn
+      Name		      "linearisierte Regelstrecke"
+      Position		      [885, 664, 1070, 766]
+      Numerator		      "[-59.060]"
+      Denominator	      "[1 30 -1308.012 -39240.36]"
+    }
     Line {
       SrcBlock		      "Pulse\nGenerator"
       SrcPort		      1
-      Points		      [10, 0]
-      Branch {
-	DstBlock		"Add"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, -55]
-	DstBlock		"Scope2"
-	DstPort			1
-      }
+      DstBlock		      "Transfer Fcn"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "Regler"
       SrcPort		      1
-      DstBlock		      "Regelstrecke"
-      DstPort		      1
+      Points		      [10, 0]
+      Branch {
+	Points			[0, -110]
+	DstBlock		"Scope4"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Regelstrecke"
+	DstPort			1
+      }
     }
     Line {
       SrcBlock		      "Subtract"
@@ -1394,16 +1355,16 @@ Model {
     Line {
       SrcBlock		      "Regelstrecke"
       SrcPort		      1
-      Points		      [100, 0]
+      Points		      [100, 0; 0, 20; 105, 0]
       Branch {
-	Points			[0, 115; -255, 0]
+	Points			[0, 205; -255, 0]
 	Branch {
-	  Points		  [0, 55]
+	  Points		  [0, 60]
 	  DstBlock		  "Gain"
 	  DstPort		  1
 	}
 	Branch {
-	  Points		  [-245, 0]
+	  Points		  [-355, 0; 0, -200]
 	  DstBlock		  "Subtract"
 	  DstPort		  2
 	}
@@ -1412,12 +1373,6 @@ Model {
 	DstBlock		"Scope1"
 	DstPort			1
       }
-    }
-    Line {
-      SrcBlock		      "Regelstrecke"
-      SrcPort		      2
-      DstBlock		      "Scope"
-      DstPort		      1
     }
     Line {
       SrcBlock		      "Gain"
@@ -1452,11 +1407,25 @@ Model {
 	DstPort			1
       }
     }
+    Line {
+      SrcBlock		      "Transfer Fcn"
+      SrcPort		      1
+      Points		      [40, 0]
+      Branch {
+	DstBlock		"Add"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -55]
+	DstBlock		"Scope2"
+	DstPort			1
+      }
+    }
   }
 }
 # Finite State Machines
 #
-#    Stateflow Version 7.1 (R2009a) dated Jul 17 2009, 10:24:20
+#    Stateflow Version 7.1 (R2009a) dated Jan 28 2009, 05:16:58
 #
 #
 
@@ -1468,14 +1437,14 @@ Stateflow {
     created		    "10-Jan-2011 10:21:27"
     isLibrary		    0
     firstTarget		    18
-    sfVersion		    71014000.00001
+    sfVersion		    71014000.000008
   }
   chart {
     id			    2
     name		    "Regelstrecke/Embedded\nMATLAB Function1"
-    windowPosition	    [272.183 249 200.25 189.75]
+    windowPosition	    [302.183 219 200.25 189.75]
     viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 1252 730 1.333333333333333]
+    screen		    [1 1 1280 1024 1.333333333333333]
     treeNode		    [0 3 0 0]
     firstTransition	    5
     firstJunction	    4
@@ -1612,9 +1581,9 @@ Stateflow {
   chart {
     id			    10
     name		    "Regelstrecke/Embedded\nMATLAB Function"
-    windowPosition	    [272.183 249 200.25 189.75]
+    windowPosition	    [302.183 219 200.25 189.75]
     viewLimits		    [0 156.75 0 153.75]
-    screen		    [1 1 1252 730 1.333333333333333]
+    screen		    [1 1 1280 1024 1.333333333333333]
     treeNode		    [0 11 0 0]
     firstTransition	    13
     firstJunction	    12
